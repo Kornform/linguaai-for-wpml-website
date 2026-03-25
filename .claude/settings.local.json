@@ -3,7 +3,14 @@
     "allow": [
       "Bash(gh api:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git checkout:*)"
     ]
   }
 }
