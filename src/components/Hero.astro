@@ -1,0 +1,287 @@
+---
+---
+
+<section class="hero-section relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <!-- Background grid pattern -->
+  <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+
+  <!-- Radial glow -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-30"
+      style="background: radial-gradient(ellipse, rgba(99,102,241,0.2) 0%, transparent 70%);">
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Copy -->
+      <div class="flex flex-col gap-7">
+        <!-- Badge -->
+        <div class="inline-flex">
+          <span class="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary-light text-xs font-medium px-3.5 py-1.5 rounded-full">
+            <span class="w-1.5 h-1.5 bg-primary-light rounded-full animate-pulse"></span>
+            WordPress Plugin — Free + Pro
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <div class="flex flex-col gap-3">
+          <h1 class="text-4xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-tight">
+            <span class="gradient-text">Translate your WordPress site</span>
+            <br />
+            <span class="text-white">with AI — not agencies.</span>
+          </h1>
+          <p class="text-lg text-slate-400 leading-relaxed max-w-[520px]">
+            LinguaAI connects WPML to OpenAI and Anthropic Claude.
+            Background processing. Glossary control. Full cost transparency.
+            <strong class="text-slate-300 font-medium">No per-word fees.</strong>
+          </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3 items-center">
+          <a href="#pricing" class="cta-primary">
+            Get Pro — from €49/year
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://wordpress.org" target="_blank" rel="noopener" class="cta-secondary">
+            Download Free
+          </a>
+        </div>
+
+        <!-- Mini trust bar -->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4ade80" stroke-width="1.3"/><path d="M4.5 7l1.8 1.8L9.5 5" stroke="#4ade80" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            WordPress 6.2+
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4ade80" stroke-width="1.3"/><path d="M4.5 7l1.8 1.8L9.5 5" stroke="#4ade80" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            WPML required
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4ade80" stroke-width="1.3"/><path d="M4.5 7l1.8 1.8L9.5 5" stroke="#4ade80" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            OpenAI + Anthropic
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#4ade80" stroke-width="1.3"/><path d="M4.5 7l1.8 1.8L9.5 5" stroke="#4ade80" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            GPLv2 License
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Plugin UI Mockup -->
+      <div class="relative flex justify-center lg:justify-end">
+        <!-- Glow behind mockup -->
+        <div class="absolute inset-0 rounded-2xl opacity-40"
+          style="background: radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%);">
+        </div>
+
+        <div class="mockup-window relative w-full max-w-[520px]">
+          <!-- Window chrome -->
+          <div class="mockup-titlebar flex items-center gap-3 px-4 py-3 border-b border-white/[0.06]">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+            </div>
+            <span class="text-[11px] text-slate-500 font-medium mx-auto">LinguaAI for WPML — Translations</span>
+          </div>
+
+          <!-- Stats row -->
+          <div class="flex gap-px bg-border/50">
+            <div class="stat-cell flex-1">
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Queue</span>
+              <span class="text-[18px] font-bold text-blue-400">3</span>
+            </div>
+            <div class="stat-cell flex-1">
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Done</span>
+              <span class="text-[18px] font-bold text-green-400">47</span>
+            </div>
+            <div class="stat-cell flex-1">
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Failed</span>
+              <span class="text-[18px] font-bold text-slate-500">0</span>
+            </div>
+            <div class="stat-cell flex-1">
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Cost</span>
+              <span class="text-[18px] font-bold text-slate-200">€0.23</span>
+            </div>
+          </div>
+
+          <!-- Table header -->
+          <div class="px-4 py-2 bg-surface/50 border-b border-white/[0.04] flex items-center justify-between">
+            <span class="text-[10px] text-slate-600 uppercase tracking-wider font-medium">Page</span>
+            <div class="flex gap-6">
+              <span class="text-[10px] text-slate-600 uppercase tracking-wider font-medium">Model</span>
+              <span class="text-[10px] text-slate-600 uppercase tracking-wider font-medium">Lang</span>
+              <span class="text-[10px] text-slate-600 uppercase tracking-wider font-medium">Cost</span>
+            </div>
+          </div>
+
+          <!-- Translation rows -->
+          <div class="divide-y divide-white/[0.04]">
+            <!-- Active row -->
+            <div class="row-active flex items-center gap-3 px-4 py-3 bg-primary/[0.04]">
+              <span class="status-dot-pulse flex-shrink-0"></span>
+              <span class="text-sm text-white font-medium flex-1">Homepage</span>
+              <div class="flex items-center gap-2">
+                <span class="model-badge openai">GPT-5</span>
+                <span class="lang-badge">EN → DE</span>
+                <span class="text-[11px] text-slate-500 w-10 text-right">—</span>
+              </div>
+            </div>
+
+            <!-- Done row 1 -->
+            <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.02] transition-colors">
+              <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-400" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M4.5 7l1.8 1.8L9.5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="text-sm text-slate-300 flex-1">About Us</span>
+              <div class="flex items-center gap-2">
+                <span class="model-badge claude">Sonnet</span>
+                <span class="lang-badge">EN → FR</span>
+                <span class="text-[11px] text-slate-400 w-10 text-right">€0.003</span>
+              </div>
+            </div>
+
+            <!-- Done row 2 -->
+            <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.02] transition-colors">
+              <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-400" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M4.5 7l1.8 1.8L9.5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="text-sm text-slate-300 flex-1">Shop / Products</span>
+              <div class="flex items-center gap-2">
+                <span class="model-badge openai">GPT-5</span>
+                <span class="lang-badge">EN → ES</span>
+                <span class="text-[11px] text-slate-400 w-10 text-right">€0.11</span>
+              </div>
+            </div>
+
+            <!-- Pending row -->
+            <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.02] transition-colors opacity-50">
+              <span class="flex-shrink-0 w-3.5 h-3.5 rounded-full border border-slate-600"></span>
+              <span class="text-sm text-slate-400 flex-1">Services</span>
+              <div class="flex items-center gap-2">
+                <span class="model-badge openai">GPT-4o</span>
+                <span class="lang-badge">EN → IT</span>
+                <span class="text-[11px] text-slate-600 w-10 text-right">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action bar -->
+          <div class="flex items-center gap-2 px-4 py-3 border-t border-white/[0.06] bg-surface/50">
+            <button class="mock-btn-primary text-[11px]">Translate Selected</button>
+            <button class="mock-btn-ghost text-[11px]">History</button>
+            <button class="mock-btn-ghost text-[11px]">Profiles</button>
+            <div class="ml-auto flex items-center gap-1.5">
+              <span class="text-[10px] text-slate-600">Glossary</span>
+              <div class="w-7 h-4 rounded-full bg-primary/40 relative">
+                <span class="absolute right-0.5 top-0.5 w-3 h-3 rounded-full bg-primary-light"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background-color: var(--bg);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 80%);
+  }
+
+  .cta-primary {
+    @apply inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200;
+    box-shadow: 0 0 28px rgba(99, 102, 241, 0.25);
+  }
+  .cta-primary:hover {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .cta-secondary {
+    @apply inline-flex items-center gap-2 text-slate-300 hover:text-white font-medium text-sm px-5 py-2.5 rounded-lg border border-border hover:border-slate-600 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-200;
+  }
+
+  /* Mockup styles */
+  .mockup-window {
+    background: #0d0f1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(99, 102, 241, 0.1),
+      0 32px 64px rgba(0, 0, 0, 0.6),
+      0 0 80px rgba(99, 102, 241, 0.06);
+  }
+
+  .mockup-titlebar {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .stat-cell {
+    @apply flex flex-col items-center py-3 bg-surface/80;
+  }
+
+  /* Status pulse dot */
+  .status-dot-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #818cf8;
+    box-shadow: 0 0 6px rgba(129, 140, 248, 0.6);
+    animation: pulse-glow 2s ease infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(129, 140, 248, 0.6); }
+    50% { opacity: 0.7; box-shadow: 0 0 12px rgba(129, 140, 248, 0.9); }
+  }
+
+  /* Model badges */
+  .model-badge {
+    @apply text-[10px] font-medium px-2 py-0.5 rounded-md;
+  }
+  .model-badge.openai {
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+  .model-badge.claude {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fcd34d;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  .lang-badge {
+    @apply text-[10px] text-slate-500 font-mono;
+  }
+
+  /* Mock action buttons */
+  .mock-btn-primary {
+    @apply font-medium px-3 py-1.5 rounded-md;
+    background: rgba(99, 102, 241, 0.85);
+    color: white;
+  }
+  .mock-btn-ghost {
+    @apply font-medium px-3 py-1.5 rounded-md text-slate-400;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+</style>

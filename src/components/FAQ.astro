@@ -1,0 +1,127 @@
+---
+const faqs = [
+  {
+    q: 'Do I need WPML to use LinguaAI?',
+    a: 'Yes. LinguaAI is an add-on to WPML — it uses WPML\'s multilingual structure to store and manage translations. WPML Multilingual CMS is required.',
+  },
+  {
+    q: 'Which AI providers are supported?',
+    a: 'LinguaAI supports OpenAI (GPT-4o, GPT-5, GPT-5.4 and more) and Anthropic Claude (Haiku, Sonnet, Opus). You can switch between providers in the settings at any time.',
+  },
+  {
+    q: 'How do I pay for translations?',
+    a: 'You pay OpenAI or Anthropic directly through your own API key. LinguaAI does not charge per word or per translation — you only pay the plugin license (Free or Pro) plus your direct API usage.',
+  },
+  {
+    q: 'How much does a translation actually cost?',
+    a: 'Costs depend on the AI model and content length. As a rough estimate: translating a 1,000-word page with GPT-4o Mini costs around €0.01–0.05. The plugin shows you the exact token count and cost for every job in the History view.',
+  },
+  {
+    q: 'What are cached tokens?',
+    a: 'OpenAI automatically caches repeated prompt prefixes (your system prompt, glossary, website context). When the same prefix is used again, those tokens are served at a significantly lower rate — up to 90% cheaper. LinguaAI tracks cached tokens separately so you can see the savings.',
+  },
+  {
+    q: 'Can I control how the translation sounds?',
+    a: 'Yes. You can write a custom system prompt, create reusable Prompt Templates for different content types, and use Translation Profiles to bundle model + prompt + glossary settings.',
+  },
+  {
+    q: 'What if I have specific terminology that must not change?',
+    a: 'Use the Glossary feature. Define source and target terms in CSV or JSON format — globally or per language pair. The glossary is automatically injected into every translation prompt.',
+  },
+  {
+    q: 'Does translation happen in real time?',
+    a: 'For OpenAI: no — and that\'s intentional. Translations are sent to OpenAI\'s background processing queue and retrieved by a WordPress cron job once complete. This prevents timeouts on long texts. For Anthropic: translations are synchronous (the Anthropic API works this way by design).',
+  },
+  {
+    q: 'Does it translate ACF fields and page builder content?',
+    a: 'Yes. ACF fields are translated automatically (with per-field opt-out). Bricks Builder and Elementor content is extracted and re-injected correctly.',
+  },
+  {
+    q: 'Is my content sent to OpenAI / Anthropic?',
+    a: 'Yes — the content to be translated is sent to the respective API for processing. This is standard for AI-powered tools. Review OpenAI\'s and Anthropic\'s privacy policies for details on data handling. LinguaAI itself does not receive or store your content.',
+  },
+];
+---
+
+<section class="section-sm" id="faq">
+  <div class="container mx-auto px-6">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-primary-light mb-4">FAQ</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+        Common questions
+      </h2>
+    </div>
+
+    <div class="max-w-[720px] mx-auto space-y-2" id="faq-list">
+      {faqs.map((faq, i) => (
+        <div class="faq-item" data-faq={i}>
+          <button class="faq-question w-full text-left flex items-center justify-between gap-4 p-5" aria-expanded="false">
+            <span class="text-[15px] font-medium text-slate-200">{faq.q}</span>
+            <svg class="faq-icon flex-shrink-0 text-slate-500 transition-transform duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5">
+            <p class="text-sm text-slate-500 leading-relaxed">{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item.open {
+    border-color: rgba(99, 102, 241, 0.25);
+  }
+
+  .faq-question {
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .faq-question:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(180deg);
+    color: #818cf8;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('.faq-question') as HTMLButtonElement;
+    const answer = item.querySelector('.faq-answer') as HTMLElement;
+
+    btn?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach((el) => {
+        el.classList.remove('open');
+        (el.querySelector('.faq-answer') as HTMLElement)?.classList.add('hidden');
+        (el.querySelector('.faq-question') as HTMLButtonElement)?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (if was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        answer?.classList.remove('hidden');
+        btn?.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,187 @@
+---
+const plans = [
+  {
+    name: 'Free',
+    price: '€0',
+    period: 'forever',
+    description: 'Get started with AI translation on WordPress. Available on WordPress.org.',
+    cta: 'Download Free',
+    ctaHref: 'https://wordpress.org',
+    ctaStyle: 'secondary',
+    badge: null,
+    features: [
+      { text: 'OpenAI support (GPT-4o Mini, GPT-4o)', included: true },
+      { text: 'Post & page translation', included: true },
+      { text: 'Basic translation history', included: true },
+      { text: 'Basic settings', included: true },
+      { text: 'Anthropic Claude', included: false },
+      { text: 'Latest OpenAI models (GPT-5, GPT-5.4)', included: false },
+      { text: 'Glossary & terminology', included: false },
+      { text: 'Translation Profiles', included: false },
+      { text: 'Cost tracking & transparency', included: false },
+      { text: 'ACF + Page Builder support', included: false },
+    ],
+  },
+  {
+    name: 'Pro — Single Site',
+    price: '€49',
+    period: 'per year',
+    description: 'For developers and site owners who need full control over their WPML translation workflow.',
+    cta: 'Get Pro',
+    ctaHref: '#',
+    ctaStyle: 'primary',
+    badge: 'Most Popular',
+    features: [
+      { text: 'Everything in Free', included: true },
+      { text: 'Anthropic Claude (Haiku, Sonnet, Opus)', included: true },
+      { text: 'All OpenAI models incl. GPT-5, GPT-5.4', included: true },
+      { text: 'Taxonomy term translation', included: true },
+      { text: 'ACF field translation', included: true },
+      { text: 'Bricks Builder + Elementor support', included: true },
+      { text: 'Glossary (global + per language pair)', included: true },
+      { text: 'Prompt Templates + Translation Profiles', included: true },
+      { text: 'Cost tracking & breakdown per job', included: true },
+      { text: 'Diagnostics & priority support', included: true },
+    ],
+  },
+  {
+    name: 'Pro — Agency',
+    price: '€99',
+    period: 'per year',
+    description: 'For agencies and developers managing multiple client sites. One license, unlimited installs.',
+    cta: 'Get Agency',
+    ctaHref: '#',
+    ctaStyle: 'outline',
+    badge: null,
+    features: [
+      { text: 'Everything in Pro Single Site', included: true },
+      { text: 'Unlimited WordPress installations', included: true },
+      { text: 'Same license key, unlimited sites', included: true },
+      { text: 'Priority support', included: true },
+      { text: 'Model compatibility updates', included: true },
+    ],
+  },
+];
+---
+
+<section class="section" id="pricing">
+  <div class="container mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-primary-light mb-4">Pricing</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
+        Simple, transparent pricing
+      </h2>
+      <p class="text-slate-500 max-w-[440px] mx-auto leading-relaxed text-sm">
+        One flat license fee. No per-word charges. Your AI API costs go directly to OpenAI or Anthropic — no markup.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-4 items-start">
+      {plans.map((plan) => (
+        <div class={`pricing-card ${plan.ctaStyle === 'primary' ? 'pricing-card-featured' : ''}`}>
+          {plan.badge && (
+            <div class="badge-featured mb-4">{plan.badge}</div>
+          )}
+          <div class="mb-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">{plan.name}</p>
+            <div class="flex items-baseline gap-1.5 mb-2">
+              <span class="text-4xl font-bold text-white">{plan.price}</span>
+              <span class="text-slate-500 text-sm">{plan.period}</span>
+            </div>
+            <p class="text-sm text-slate-500 leading-relaxed">{plan.description}</p>
+          </div>
+
+          <a
+            href={plan.ctaHref}
+            class={`cta-btn cta-btn-${plan.ctaStyle} mb-8`}
+          >
+            {plan.cta}
+          </a>
+
+          <ul class="space-y-3">
+            {plan.features.map((f) => (
+              <li class={`flex items-start gap-2.5 text-sm ${f.included ? 'text-slate-300' : 'text-slate-600'}`}>
+                {f.included ? (
+                  <svg class="flex-shrink-0 mt-0.5 text-green-400" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M4.5 7l1.8 1.8L9.5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                ) : (
+                  <svg class="flex-shrink-0 mt-0.5 text-slate-700" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M5 7h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                )}
+                <span>{f.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Fine print -->
+    <p class="text-center text-xs text-slate-600 mt-8">
+      All prices in EUR. Licenses renew annually. Cancel anytime.
+      API costs (OpenAI / Anthropic) are billed directly by the respective provider — not by LinguaAI.
+    </p>
+
+  </div>
+</section>
+
+<style>
+  .pricing-card {
+    @apply rounded-2xl p-7 flex flex-col;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+
+  .pricing-card-featured {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow:
+      0 0 0 1px rgba(99, 102, 241, 0.1),
+      0 0 40px rgba(99, 102, 241, 0.1);
+    position: relative;
+  }
+
+  .badge-featured {
+    @apply inline-flex self-start text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+  }
+
+  .cta-btn {
+    @apply w-full text-center text-sm font-semibold py-2.5 px-4 rounded-lg transition-all duration-200 block;
+  }
+
+  .cta-btn-primary {
+    @apply bg-primary hover:bg-primary-light text-white;
+    box-shadow: 0 0 24px rgba(99, 102, 241, 0.2);
+  }
+  .cta-btn-primary:hover {
+    box-shadow: 0 0 32px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .cta-btn-secondary {
+    @apply text-slate-300 hover:text-white;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+  }
+  .cta-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .cta-btn-outline {
+    @apply text-primary-light hover:text-white;
+    background: transparent;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+  }
+  .cta-btn-outline:hover {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.5);
+  }
+</style>
