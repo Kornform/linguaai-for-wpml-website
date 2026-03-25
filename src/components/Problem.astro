@@ -82,7 +82,10 @@
 
 <style>
   .problem-card {
-    @apply p-7 flex flex-col rounded-2xl;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
     background: var(--card);
     border: 1px solid var(--border);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -94,7 +97,12 @@
   }
 
   .icon-wrap {
-    @apply w-10 h-10 rounded-xl flex items-center justify-center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }

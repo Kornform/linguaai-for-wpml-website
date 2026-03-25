@@ -104,7 +104,10 @@ const features = [
 
 <style>
   .feature-card {
-    @apply p-6 flex flex-col rounded-2xl;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
     background: var(--card);
     border: 1px solid var(--border);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -116,7 +119,13 @@ const features = [
   }
 
   .icon-wrap {
-    @apply w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.15);
   }

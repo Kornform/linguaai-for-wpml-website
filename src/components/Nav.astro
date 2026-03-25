@@ -70,16 +70,38 @@
   }
 
   .nav-link {
-    @apply text-sm text-slate-400 hover:text-white transition-colors px-3 py-1.5 rounded-md hover:bg-white/5;
+    font-size: 13px;
+    color: #94a3b8;
+    transition: color var(--transition-base);
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+  }
+  .nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
   }
 
   .mobile-nav-link {
-    @apply text-[15px] text-slate-300 hover:text-white transition-colors py-2;
+    font-size: 15px;
+    color: #cbd5e1;
+    transition: color var(--transition-base);
+    padding: 8px 0;
+  }
+  .mobile-nav-link:hover {
+    color: #ffffff;
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary-light text-white font-medium px-4 py-2 rounded-lg transition-all duration-200;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
   }
 
   .btn-primary:hover {

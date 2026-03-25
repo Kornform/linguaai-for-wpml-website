@@ -207,16 +207,41 @@
   }
 
   .cta-primary {
-    @apply inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
     box-shadow: 0 0 28px rgba(99, 102, 241, 0.25);
   }
   .cta-primary:hover {
+    background-color: var(--color-accent-hover);
     box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
     transform: translateY(-1px);
   }
 
   .cta-secondary {
-    @apply inline-flex items-center gap-2 text-slate-300 hover:text-white font-medium text-sm px-5 py-2.5 rounded-lg border border-border hover:border-slate-600 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-subtle);
+    background-color: rgba(255, 255, 255, 0.03);
+    transition: all var(--transition-base);
+  }
+  .cta-secondary:hover {
+    color: #ffffff;
+    border-color: #4b5563;
+    background-color: rgba(255, 255, 255, 0.06);
   }
 
   /* Mockup styles */
@@ -236,7 +261,11 @@
   }
 
   .stat-cell {
-    @apply flex flex-col items-center py-3 bg-surface/80;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    background-color: rgba(13, 14, 23, 0.8);
   }
 
   /* Status pulse dot */
@@ -256,7 +285,10 @@
 
   /* Model badges */
   .model-badge {
-    @apply text-[10px] font-medium px-2 py-0.5 rounded-md;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: var(--radius-md);
   }
   .model-badge.openai {
     background: rgba(99, 102, 241, 0.15);
@@ -270,17 +302,24 @@
   }
 
   .lang-badge {
-    @apply text-[10px] text-slate-500 font-mono;
+    font-size: 10px;
+    color: #64748b;
+    font-family: monospace;
   }
 
   /* Mock action buttons */
   .mock-btn-primary {
-    @apply font-medium px-3 py-1.5 rounded-md;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
     background: rgba(99, 102, 241, 0.85);
     color: white;
   }
   .mock-btn-ghost {
-    @apply font-medium px-3 py-1.5 rounded-md text-slate-400;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    color: #94a3b8;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
