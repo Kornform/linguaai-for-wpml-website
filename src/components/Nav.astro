@@ -1,0 +1,146 @@
+---
+---
+
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+  <div class="container mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-glow-sm group-hover:shadow-glow transition-shadow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 4h12M2 8h8M2 12h10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="13" cy="8" r="2.5" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <span class="font-semibold text-white text-[15px] tracking-[-0.01em]">LinguaAI
+        <span class="text-slate-500 font-normal"> for WPML</span>
+      </span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-1">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="/docs" class="nav-link">Docs</a>
+      <a href="/changelog" class="nav-link">Changelog</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="/login" class="text-sm text-slate-400 hover:text-white transition-colors px-3 py-1.5">Sign in</a>
+      <a href="#pricing" class="btn-primary text-sm">Get Pro</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" class="md:hidden p-2 text-slate-400 hover:text-white transition-colors" aria-label="Toggle menu">
+      <svg id="icon-open" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface/95 backdrop-blur-md">
+    <div class="container mx-auto px-6 py-4 flex flex-col gap-2">
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#pricing" class="mobile-nav-link">Pricing</a>
+      <a href="/docs" class="mobile-nav-link">Docs</a>
+      <a href="/changelog" class="mobile-nav-link">Changelog</a>
+      <div class="pt-3 border-t border-border flex flex-col gap-2">
+        <a href="/login" class="mobile-nav-link">Sign in</a>
+        <a href="#pricing" class="btn-primary text-center text-sm">Get Pro</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  #nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  #nav.scrolled {
+    background: rgba(7, 8, 14, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+  }
+
+  .nav-link {
+    font-size: 13px;
+    color: #94a3b8;
+    transition: color var(--transition-base);
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+  }
+  .nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .mobile-nav-link {
+    font-size: 15px;
+    color: #cbd5e1;
+    transition: color var(--transition-base);
+    padding: 8px 0;
+  }
+  .mobile-nav-link:hover {
+    color: #ffffff;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 28px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+  }
+</style>
+
+<script>
+  // Scroll behavior
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden', isOpen);
+    iconOpen?.classList.toggle('hidden', !isOpen);
+    iconClose?.classList.toggle('hidden', isOpen);
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>

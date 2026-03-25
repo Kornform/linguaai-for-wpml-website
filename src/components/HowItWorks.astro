@@ -1,0 +1,81 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Install & connect your API key',
+    description: 'Upload the plugin to WordPress, activate it, and enter your OpenAI or Anthropic API key in LinguaAI Settings. No configuration beyond that.',
+    detail: 'PHP 7.4+ · WordPress 6.2+ · WPML required',
+  },
+  {
+    number: '02',
+    title: 'Pick content, choose languages, click Translate',
+    description: 'Go to LinguaAI Translations, select the pages or posts you want to translate, pick your target languages, and hit Translate. Optionally choose a Profile or enable Glossary.',
+    detail: 'Posts · Pages · CPTs · Terms · ACF · Page Builders',
+  },
+  {
+    number: '03',
+    title: 'Done. LinguaAI handles the rest.',
+    description: 'Translations run in the background. No waiting, no timeouts. Once complete, the translated content is written directly into WPML — ready to publish.',
+    detail: 'Background processing · Direct WPML integration · History log',
+  },
+];
+---
+
+<section class="section-sm bg-surface/30 border-y border-border" id="how-it-works">
+  <div class="container mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-primary-light mb-4">How it works</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+        Three steps. That's it.
+      </h2>
+    </div>
+
+    <div class="relative">
+      <!-- Connector line (desktop) -->
+      <div class="hidden lg:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent pointer-events-none"></div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        {steps.map((step, i) => (
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="step-number">{step.number}</div>
+              {i < steps.length - 1 && (
+                <div class="hidden lg:block flex-1 h-px bg-border"></div>
+              )}
+            </div>
+            <h3 class="text-white font-semibold text-[15px] mb-2 leading-snug">{step.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">{step.description}</p>
+            <p class="text-[11px] text-slate-600 font-mono">{step.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .step-card {
+    padding: 24px;
+    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+
+  .step-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    flex-shrink: 0;
+  }
+</style>
